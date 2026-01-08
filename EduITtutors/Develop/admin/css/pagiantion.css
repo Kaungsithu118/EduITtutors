@@ -1,0 +1,47 @@
+.pagination_row
+{
+	margin-top: 11px;
+}
+
+.pagination_list li
+{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: #FFFFFF;
+	border: solid 1px #ebebeb;
+	text-align: center;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.pagination_list li:not(:last-child)
+{
+	margin-right: 5px;
+}
+.pagination_list li:hover,
+.pagination_list li.active
+{
+	background: #14bdee;
+}
+.pagination_list li a
+{
+	display: block;
+	position: relative;
+	font-size: 16px;
+	font-weight: 400;
+	color: #757686;
+	line-height: 40px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.pagination_list li:hover a,
+.pagination_list li.active a
+{
+	color: #FFFFFF;
+}

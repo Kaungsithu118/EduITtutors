@@ -1,0 +1,173 @@
+/* Invoice.css - Updated for proper A4 printing */
+
+/* Set page size and margins for printing */
+@page {
+  size: A4 portrait;
+  margin: 15mm 15mm 15mm 15mm;
+}
+
+@media print {
+  body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-size: 12pt;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #invoice-print {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: white;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Ensure tables don't break across pages */
+  table {
+    page-break-inside: avoid;
+  }
+
+  /* Prevent elements from breaking across pages */
+  .row {
+    page-break-inside: avoid;
+  }
+
+  /* Adjust font sizes for printing */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  /* Invoice specific adjustments */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .invoice-letter {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Ensure proper spacing */
+  .table {
+    margin-bottom: 10mm;
+  }
+
+  /* Make sure totals are clearly visible */
+  .last-row td, .last-row th {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  /* Force full width for invoice sections */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  /* Adjust column widths for better fit */
+  .col-3, .col-4, .col-6, .col-9 {
+    float: none;
+  }
+}
+
+/* Screen styles remain the same */
+body {
+  background: #eee;
+  font-family: roboto;
+}
+
+div.container {
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+div.invoice-letter {
+  width: auto;
+  position: relative;
+  min-height: 150px;
+  background-color: #04617B;
+  margin-right: -48px;
+  margin-left: -48px;
+  box-shadow: 0 4px 3px rgba(0,0,0,0.4);
+}
+
+div.letter-title {
+  margin-top: 10px;
+  height: 130px;
+  border-right: 2px solid #eee;
+}
+
+div.letter-content {
+  margin-top: 10px;
+}
+
+table.invoice thead th {
+  background-color: rgba(4, 97, 123, 0.2);
+  border-top: none;
+}
+
+table.invoice thead tr:first-child th:first-child {
+  border-top-left-radius: 25px;
+}
+
+table.invoice thead tr:first-child th:last-child {
+  border-top-right-radius: 25px;
+}
+
+tr.last-row {
+  background-color: rgba(4, 97, 123, 0.2);
+}
+
+tr.last-row th {
+  border-bottom-left-radius: 25px;
+  width: 30px;
+}
+
+tr.last-row td {
+  border-bottom-right-radius: 25px;
+}
+
+div.row div.to {
+  height: 260px;
+  padding-right: 25px;
+  border-right: 2px solid rgba(4, 97, 123, 0.2);
+}
+
+/* Print button styling */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.btn-download {
+  background-color: #04617B;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-continue {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+}

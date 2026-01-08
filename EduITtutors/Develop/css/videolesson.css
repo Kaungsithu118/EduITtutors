@@ -1,0 +1,999 @@
+body {
+  background: #f7f8fa;
+}
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+.lesson-completed {
+  color: #22c55e;
+  font-size: 1.25em;
+}
+
+.lesson-current {
+  color: #ef4444;
+  font-size: 1.25em;
+}
+
+.lesson-title {
+  font-weight: 600;
+}
+
+.lesson-subtitle {
+  font-size: 0.96em;
+  color: #222;
+}
+
+.profile-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.progress-bar {
+  background-color: #ef4444;
+}
+
+.nav-tabs .nav-link.active {
+  border-color: #0d6efd #fff #fff;
+}
+
+.video-card {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.lesson-group.active {
+  background: #f7ecea;
+}
+
+.lesson-group {
+  border-radius: 8px;
+}
+
+.icon-circle {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 50%;
+}
+
+.lesson-timer {
+  color: #a1a1aa;
+  font-size: 0.95em;
+}
+
+.tab-content {
+  background: #fff;
+  padding: 1.2rem 1rem;
+  border-radius: 0 0 14px 14px;
+}
+
+
+
+
+/* Container for video card */
+.video-card {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  border-radius: 1rem;
+  /* rounded-3 */
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  /* mb-4 */
+}
+
+/* Responsive iframe wrapper with 16:9 ratio */
+.ratio-16x9 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ratio-16x9 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* Video card inner padding */
+.video-card>.p-3 {
+  padding: 1rem;
+}
+
+#lessonTitle {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+/* Flex container for duration and completion */
+.video-card .d-flex {
+  font-size: 0.875rem;
+  color: #6c757d;
+  /* muted text */
+}
+
+.video-card i {
+  vertical-align: middle;
+  margin-right: 0.3rem;
+  color: #0d6efd;
+  /* Bootstrap primary color */
+}
+
+/* Instructor Profile Container */
+#lessons .d-flex.align-items-center.mb-4.p-3.bg-light.rounded-3 {
+  background: #fafafa;
+  border-radius: 1.25rem;
+  /* slightly bigger radius */
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  align-items: center;
+  gap: 1.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+#lessons .d-flex.align-items-center.mb-4.p-3.bg-light.rounded-3:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Profile Image */
+#lessons .d-flex.align-items-center.mb-4.p-3.bg-light.rounded-3 img.rounded-circle {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border: 3px solid #0d6efd;
+  /* blue accent border */
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.3);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+#lessons .d-flex.align-items-center.mb-4.p-3.bg-light.rounded-3:hover img.rounded-circle {
+  transform: scale(1.05);
+}
+
+/* Name and Title */
+#lessons .flex-grow-1 {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+#lessons .fw-semibold.fs-5 {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #212529;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.2rem;
+}
+
+#lessons .text-muted.small {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-style: italic;
+  user-select: none;
+}
+
+/* Badge Container */
+#lessons .mt-1 {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+/* Badges */
+#lessons .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4em 0.75em;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+#lessons .badge i {
+  font-size: 1rem;
+  color: inherit;
+}
+
+/* Badge colors with subtle gradient and shadow */
+#lessons .bg-success {
+  background: linear-gradient(145deg, #198754cc, #146c43cc);
+  color: #e6f4ea;
+  box-shadow: 0 4px 8px #19875488;
+}
+
+#lessons .bg-info {
+  background: linear-gradient(145deg, #0dcaf0cc, #0a8dbfcc);
+  color: #e0f7fa;
+  box-shadow: 0 4px 8px #0dcaf088;
+}
+
+#lessons .bg-secondary {
+  background: linear-gradient(145deg, #6c757dcc, #4f545acc);
+  color: #e7e8ea;
+  box-shadow: 0 4px 8px #6c757d88;
+}
+
+/* Button */
+#lessons button.btn.btn-outline-primary {
+  padding: 0.4rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 1.25rem;
+  border-width: 2px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+}
+
+#lessons button.btn.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+  box-shadow: 0 6px 14px rgba(13, 110, 253, 0.35);
+}
+
+
+
+
+
+#lessons {
+  /* Base Styles */
+  --primary-color: #4361ee;
+  --primary-hover: #3a56d4;
+  --text-color: #2b2d42;
+  --light-text: #6c757d;
+  --border-color: #e9ecef;
+  --bg-light: #f8f9fa;
+  --success-color: #4cc9f0;
+  --warning-color: #f8961e;
+  --danger-color: #ef233c;
+
+  margin: 3rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Tab Navigation - Modern Styling */
+#lessons .nav-tabs {
+  border-bottom: 2px solid var(--border-color);
+  position: relative;
+}
+
+#lessons .nav-tabs::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+}
+
+#lessons .nav-link {
+  color: var(--light-text);
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#lessons .nav-link i {
+  font-size: 1.1em;
+  transition: transform 0.2s ease;
+}
+
+#lessons .nav-link:hover {
+  color: var(--primary-color);
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+#lessons .nav-link:hover i {
+  transform: scale(1.1);
+}
+
+#lessons .nav-link.active {
+  color: var(--primary-color);
+  background-color: transparent;
+  border: none;
+}
+
+#lessons .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 3px 3px 0 0;
+  animation: tabUnderline 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@keyframes tabUnderline {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Tab Content - Elevated Card Style */
+#lessons .tab-content {
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+#lessons .tab-content:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Accordion - Modern Flat Design */
+#lessons .accordion {
+  --bs-accordion-border-color: var(--border-color);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.2);
+}
+
+#lessons .accordion-button {
+  font-weight: 600;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+#lessons .accordion-button:not(.collapsed) {
+  background-color: white;
+  color: var(--primary-color);
+  box-shadow: none;
+}
+
+#lessons .accordion-button::after {
+  background-size: 1.2rem;
+  transition: transform 0.2s ease-out;
+}
+
+#lessons .accordion-body {
+  padding: 0;
+}
+
+/* Lesson Items - Interactive List */
+#lessons .list-group-item {
+  padding: 1.25rem;
+  border-left: none;
+  border-right: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#lessons .list-group-item:hover {
+  background-color: var(--bg-light);
+  transform: translateX(5px);
+}
+
+#lessons .list-group-item i {
+  margin-right: 0.75rem;
+  font-size: 1.2em;
+}
+
+#lessons .list-group-item .badge {
+  background-color: var(--bg-light);
+  color: var(--light-text);
+  font-weight: 500;
+  padding: 0.35em 0.65em;
+  min-width: 4.5em;
+}
+
+/* Review Section - Detailed Styling */
+#lessons .rating-summary {
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), white);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+#lessons .display-4 {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+#lessons .text-warning {
+  color: var(--warning-color) !important;
+}
+
+#lessons .progress {
+  height: 8px;
+  border-radius: 4px;
+}
+
+#lessons .progress-bar {
+  background-color: var(--warning-color);
+}
+
+#lessons .review-card {
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#lessons .review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Elements */
+#lessons .form-control,
+#lessons .form-select {
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#lessons .form-control:focus,
+#lessons .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.2);
+}
+
+#lessons .btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#lessons .btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  #lessons .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  #lessons .tab-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #lessons .nav-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #lessons .nav-item {
+    flex: 0 0 auto;
+  }
+
+  #lessons .rating-summary {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #lessons .rating-bars {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+}
+
+/* Micro-interactions */
+#lessons .bi-check2 {
+  transition: transform 0.2s ease;
+}
+
+#lessons li:hover .bi-check2 {
+  transform: scale(1.2);
+}
+
+/* Accessibility Improvements */
+#lessons .nav-link:focus-visible,
+#lessons .accordion-button:focus-visible,
+#lessons .btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+#lessons [role="tabpanel"]:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--primary-color);
+  border-radius: 0.5rem;
+}
+
+
+/* CONTAINER AREA */
+#right {
+  padding: 2rem;
+  background-color: #f8fafc;
+}
+
+/* CARD STYLING */
+#right .card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(180deg, #ffffff 0%, #fefefe 100%);
+}
+
+#right .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+}
+
+/* TITLE AND BADGE */
+#right .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+#right .badge {
+  font-size: 0.75rem;
+  padding: 0.4em 0.7em;
+  border-radius: 999px;
+  font-weight: 500;
+  background: #eef2f7;
+  color: #374151;
+}
+
+/* PROGRESS BAR */
+#right .progress {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #e5e7eb;
+}
+
+#right .progress-bar {
+  background: linear-gradient(90deg, #00c9a7, #00b08d);
+  transition: width 0.5s ease;
+}
+
+
+
+
+
+
+
+/* === Container Card === */
+.lessonscontent {
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f9faff, #e9f0ff);
+  box-shadow:
+    0 8px 16px rgba(0, 123, 255, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d3d9ff;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.lessonscontent:hover {
+  box-shadow:
+    0 12px 24px rgba(0, 123, 255, 0.2),
+    0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* === Header === */
+.lessonscontent .card-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #0033cc;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.lessonscontent .badge {
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 30px;
+  padding: 8px 16px;
+  background-color: #e0e7ff;
+  color: #0033cc;
+  user-select: none;
+  box-shadow: 0 2px 5px rgba(0, 51, 204, 0.15);
+}
+
+/* === Accordion Buttons === */
+.lessonscontent .accordion-button {
+  border-radius: 15px;
+  background-color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 18px 24px;
+  color: #002080;
+  box-shadow: 0 2px 6px rgba(0, 0, 102, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.lessonscontent .accordion-button:hover {
+  background-color: #cce0ff;
+  color: #001366;
+  box-shadow: 0 4px 12px rgba(0, 0, 153, 0.3);
+}
+
+.lessonscontent .accordion-button:not(.collapsed) {
+  background-color: #99c2ff;
+  color: #000d33;
+  box-shadow: inset 0 0 12px #0055cc88;
+}
+
+.lessonscontent .accordion-button i {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.lessonscontent .accordion-button:not(.collapsed) i {
+  transform: rotate(360deg);
+}
+
+/* === Accordion Body === */
+.lessonscontent .accordion-body {
+  background-color: #f5faff;
+  padding: 0;
+  border-left: 4px solid #3366ff;
+  border-radius: 0 0 15px 15px;
+}
+
+/* === Lesson Items === */
+.lessonscontent .list-group-item {
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid #dde6ff;
+  padding: 14px 28px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 0 0 15px 15px;
+}
+
+.lessonscontent .list-group-item:last-child {
+  border-bottom: none;
+  border-radius: 0 0 15px 15px;
+}
+
+.lessonscontent .list-group-item:hover {
+  background-color: #cce0ff;
+  transform: translateX(5px);
+  box-shadow: 2px 2px 8px rgba(51, 102, 255, 0.15);
+}
+
+.lessonscontent .list-group-item.completed {
+  background-color: #d7f3d7;
+  color: #1e7e1e;
+  font-weight: 600;
+  box-shadow: 0 0 8px #6cc36c80;
+}
+
+.lessonscontent .list-group-item.completed:hover {
+  background-color: #b2e6b2;
+  transform: translateX(5px);
+  box-shadow: 2px 4px 12px #51cf6680;
+}
+
+/* === Icons in List Items === */
+.lessonscontent .list-group-item i {
+  font-size: 1.25rem;
+  margin-right: 12px;
+  transition: color 0.3s ease;
+}
+
+.lessonscontent .list-group-item.completed i {
+  color: #28a745;
+}
+
+.lessonscontent .list-group-item .bi-play-circle {
+  color: #6c757d;
+}
+
+.lessonscontent .list-group-item .bi-file-earmark-text {
+  color: #3399ff;
+}
+
+/* === Badges on Lessons === */
+.lessonscontent .list-group-item .badge {
+  background-color: #e9f0ff;
+  color: #0033cc;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px #99bbff80;
+  user-select: none;
+}
+
+/* === Smooth Scroll for Accordion Content === */
+.lessonscontent .accordion-collapse {
+  scroll-behavior: smooth;
+}
+
+/* === Responsive tweaks === */
+@media (max-width: 768px) {
+  .lessonscontent {
+    border-radius: 15px;
+  }
+
+  .lessonscontent .accordion-button {
+    font-size: 0.9rem;
+    padding: 14px 18px;
+  }
+
+  .lessonscontent .list-group-item {
+    font-size: 0.9rem;
+    padding: 12px 18px;
+  }
+}
+
+
+
+/* FAQ CONTAINER */
+#faq {
+  padding: 2rem 1rem;
+  background-color: #f9fafb;
+  border-radius: 1rem;
+}
+
+/* HEADER TITLE */
+#faq h4 {
+  font-size: 1.5rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* ACCORDION ITEM */
+#faqAccordion .accordion-item {
+  border: none;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+#faqAccordion .accordion-item:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* ACCORDION BUTTON (QUESTION) */
+#faqAccordion .accordion-button {
+  background-color: #f1f5f9;
+  color: #1f2937;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#faqAccordion .accordion-button:hover {
+  background-color: #e2e8f0;
+}
+
+#faqAccordion .accordion-button.collapsed {
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+/* ICON OVERRIDE */
+#faqAccordion .accordion-button::after {
+  filter: invert(38%) sepia(12%) saturate(295%) hue-rotate(180deg) brightness(94%) contrast(87%);
+}
+
+/* ACCORDION BODY (ANSWER) */
+#faqAccordion .accordion-body {
+  font-size: 0.95rem;
+  color: #4b5563;
+  padding: 1rem 1.25rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  line-height: 1.6;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#reviews .card,
+#reviews .card-body,
+#reviews .progress-bar {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Optional staggered animation for each review */
+#reviews .card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+#reviews .card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+#reviews .card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* ==== RESPONSIVE IMPROVEMENTS ==== */
+@media (max-width: 767.98px) {
+  #reviews .display-4 {
+    font-size: 2.2rem;
+  }
+
+  #reviews .col-md-4,
+  #reviews .col-md-8 {
+    text-align: center;
+  }
+
+  #reviews .d-flex.align-items-center {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  #reviews .d-flex.align-items-center.mb-2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #reviews .progress {
+    width: 100%;
+  }
+
+  #reviews .ms-2,
+  #reviews .me-2 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* ===== AVATAR IMAGE ===== */
+#reviews img.rounded-circle {
+  border: 2px solid #e0e7ff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== STAR COLOR GRADIENT ===== */
+#reviews .text-warning i {
+  background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== REVIEW FORM TRANSITION ===== */
+#reviewForm {
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+#reviews .collapse:not(.show) {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+#reviews .collapse.show {
+  opacity: 1;
+  max-height: 1000px;
+}
+
+/* SUBTLE DIVIDERS FOR MULTIPLE REVIEWS */
+#reviews .card+.card {
+  margin-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.25rem;
+}
+
+/* BUTTON ICON ADDITION (OPTIONAL) */
+#reviews .btn-outline-primary::after {
+  content: ' ✍️';
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+/* FORM FOCUS VISIBILITY */
+#reviews .form-control:focus,
+#reviews .form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  border-color: #6366f1;
+}
+
+.progress-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.progress-container {
+  margin-top: 20px;
+  position: relative;
+}
+
+.progress-track {
+  background: #e0e0e0;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #ff5252, #ff1744);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+/* Bubble below the bar */
+.progress-bubble-below {
+  position: absolute;
+  top: 18px;
+  /* below the bar */
+  transform: translateX(-50%);
+  background-color: #ff5252;
+  color: white;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(229, 57, 53, 0.3);
+  z-index: 1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .progress-bubble-below {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}

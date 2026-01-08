@@ -1,0 +1,258 @@
+/* Import sleek modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(125deg, #f0f4f8, #ffffff);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Layout */
+#webinarcontent {
+  padding: 100px 20px;
+}
+
+#webinarcontent .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Sidebar Form */
+#webinarcontent .sidebar {
+  flex: 1;
+  min-width: 350px;
+  max-width: 420px;
+  background: rgba(0, 22, 51, 0.95);
+  color: #fff;
+  padding: 48px 36px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+  transition: all 0.4s ease;
+}
+
+#webinarcontent .sidebar:hover {
+  transform: translateY(-4px);
+}
+
+#webinarcontent .sidebar h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+/* Floating Labels */
+#webinarcontent .sidebar label {
+  position: relative;
+  margin-bottom: 20px;
+  display: block;
+}
+
+#webinarcontent .sidebar input,
+#webinarcontent .sidebar select {
+  width: 100%;
+  padding: 16px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  background-color: #fff;
+  border: 2px solid transparent;
+  color: #111827;
+  transition: all 0.3s ease;
+}
+
+#webinarcontent .sidebar input:focus,
+#webinarcontent .sidebar select:focus {
+  border-color: #05d7df;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+  outline: none;
+}
+
+#webinarcontent .sidebar label span {
+  position: absolute;
+  top: 16px;
+  left: 14px;
+  font-size: 15px;
+  color: #6b7280;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background: #fff;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+#webinarcontent .sidebar input:focus+span,
+#webinarcontent .sidebar input:not(:placeholder-shown)+span {
+  top: -8px;
+  left: 12px;
+  font-size: 11px;
+  color: #22c55e;
+}
+
+/* Radio Group */
+#webinarcontent .radio-group {
+  display: flex;
+  gap: 24px;
+  margin-top: 8px;
+  padding-left: 6px;
+}
+
+#webinarcontent .radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #f1f5f9;
+}
+
+/* CTA Button */
+#webinarcontent .sidebar button {
+  margin-top: 24px;
+  width: 100%;
+  background: linear-gradient(135deg, #14bdee, #0046eb);
+  color: white;
+  padding: 18px 0;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#webinarcontent .sidebar button:hover {
+  background: linear-gradient(135deg, rgb(220, 220, 220), rgb(230, 230, 230));
+  transform: translateY(-2px) scale(1.02);
+  color: black;
+}
+
+#webinarcontent .sidebar button:active {
+  transform: scale(0.98);
+}
+
+/* Privacy Text */
+#webinarcontent .privacy {
+  margin-top: 28px;
+  font-size: 12px;
+  color: #d1d5db;
+  line-height: 1.5;
+}
+
+#webinarcontent .privacy a {
+  color: #d1d5db;
+  text-decoration: underline;
+}
+
+/* Main Content */
+#webinarcontent .main-content {
+  flex: 2;
+  min-width: 320px;
+  max-width: 720px;
+}
+
+#webinarcontent .main-content h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  line-height: 1.3;
+  color: #0f172a;
+}
+
+#webinarcontent .banner-img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease;
+}
+
+#webinarcontent .banner-img:hover {
+  transform: scale(1.015);
+}
+
+#webinarcontent .main-content p {
+  font-size: 18px;
+  color: #334155;
+  margin-bottom: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #webinarcontent .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #webinarcontent .sidebar,
+  #webinarcontent .main-content {
+    max-width: 100%;
+  }
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+.main-content p,
+.main-content .intro,
+.main-content .body,
+.main-content .conclusion {
+  text-align: justify;
+  margin-bottom: 1.5em;
+  color: #333;
+  font-size: 1rem;
+}
+
+.main-content h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.banner-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+}
+
+.webinar-details {
+  margin: 20px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.webinar-details p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.webinar-details i {
+  color: #007BFF;
+  /* Optional: Bootstrap blue or your primary color */
+  margin-right: 8px;
+  width: 20px;
+  text-align: center;
+}

@@ -1,0 +1,252 @@
+        /* Modal Dialog */
+        #eventDiscountModal .modal-dialog {
+            max-width: 780px;
+            animation: popUpIn 0.5s ease-in-out both;
+        }
+
+
+        /* Modal Content with Aqua Glow */
+        #eventDiscountModal .modal-content {
+            background: #ffffff;
+            border: 2px solid rgba(0, 189, 241, 0.25);
+            border-radius: 22px;
+            box-shadow: 0 0 25px rgba(0, 189, 241, 0.15), 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.8rem 3rem;
+            font-family: 'Segoe UI', sans-serif;
+            color: #0f172a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Accent Line */
+        #eventDiscountModal .modal-content::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, #14bdee, #00bdf1);
+            z-index: -1;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+        }
+
+        /* Header */
+        #eventDiscountModal .modal-header {
+            border-bottom: none;
+            padding-bottom: 1.2rem;
+            justify-content: space-between;
+        }
+
+        #eventDiscountModal .modal-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: rgb(1, 28, 135);
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        #eventDiscountModal .modal-title::before {
+            content: "🎉";
+            font-size: 2.3rem;
+        }
+
+        /* Close Button */
+        #eventDiscountModal .btn-close {
+            filter: invert(1);
+            opacity: 0.4;
+            transition: 0.3s ease;
+        }
+
+        #eventDiscountModal .btn-close:hover {
+            opacity: 1;
+        }
+
+        /* Body */
+        #eventDiscountModal .modal-body {
+            text-align: center;
+        }
+
+        /* Event Details */
+        .event-ad {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        /* Event Title */
+        .event-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: rgb(0, 15, 73);
+        }
+
+        /* Discount Badge */
+        .discount-badge {
+            background: linear-gradient(135deg, #0084ff, #00c2ff);
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 0.85rem 2.2rem;
+            border-radius: 999px;
+            box-shadow: 0 6px 25px rgba(0, 189, 241, 0.45);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .discount-badge:hover {
+            transform: scale(1.07);
+            box-shadow: 0 10px 35px rgba(0, 189, 241, 0.6);
+        }
+
+        .discount-badge::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0%, rgba(88, 88, 88, 0.2) 50%, rgba(255, 255, 255, 0.05) 100%);
+            animation: shimmer 3s infinite linear;
+            z-index: 1;
+        }
+
+        .discount-badge span {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+
+        /* Description */
+        .event-description {
+            color: #334155;
+            line-height: 1.6;
+            max-width: 80%;
+        }
+
+        /* End Date */
+        .event-end-date {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        /* Footer Buttons */
+        #eventDiscountModal .modal-footer {
+            border-top: none;
+            justify-content: center;
+            gap: 1rem;
+            padding-top: 2rem;
+        }
+
+        /* Primary Button */
+        #eventDiscountModal .btn-primary {
+            background: linear-gradient(135deg, rgb(1, 138, 175), rgb(18, 155, 193));
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2.5rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0, 82, 105, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        #eventDiscountModal .btn-primary:hover {
+            background: linear-gradient(135deg, rgb(0, 94, 255), rgb(0, 76, 207));
+            transform: translateY(-1px);
+        }
+
+        /* Secondary Button */
+        #eventDiscountModal .btn-secondary {
+            background: #e2e8f0;
+            color: #1e293b;
+            border: none;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 14px;
+            transition: background 0.3s ease;
+        }
+
+        #eventDiscountModal .btn-secondary:hover {
+            background: #cbd5e1;
+        }
+
+        /* Animations */
+        @keyframes popUpIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes glowBadge {
+
+            0%,
+            100% {
+                box-shadow: 0 0 18px rgba(0, 189, 241, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 25px rgba(0, 189, 241, 0.7);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 576px) {
+            #eventDiscountModal .modal-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .event-title {
+                font-size: 1.5rem;
+            }
+
+            .discount-badge {
+                font-size: 1.2rem;
+                padding: 10px 24px;
+            }
+
+            .event-description {
+                font-size: 1rem;
+            }
+
+            #eventDiscountModal .modal-footer {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            #eventDiscountModal .btn-primary,
+            #eventDiscountModal .btn-secondary {
+                width: 100%;
+            }
+        }

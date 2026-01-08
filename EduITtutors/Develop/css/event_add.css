@@ -1,0 +1,242 @@
+/* === Overlay === */
+.event-discount-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: popupFadeIn 0.5s ease-in-out;
+}
+
+/* === Container === */
+.event-discount-container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  max-width: 960px;       /* increased from 850px to 960px */
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  animation: popupSlideIn 0.5s ease-out;
+  position: relative;
+}
+
+.event-discount-content {
+  flex: 1.7;
+  padding: 3rem 3.5rem;  /* increased padding from 2rem 2.5rem */
+  background: #fdfdfd;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* === Close Button === */
+.close-popup {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  color: #000000;
+  z-index: 10;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.close-popup:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: rotate(90deg);
+}
+
+/* === Banner Section === */
+.event-discount-banner {
+  flex: 1.3;
+  min-height: 380px;     /* increased height from 320px */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 320px;
+}
+.event-discount-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(16, 16, 16, 0.4), rgba(28, 28, 28, 0.8));
+  z-index: 1;
+}
+
+/* === Floating Discount Badge === */
+.event-discount-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(255, 65, 108, 0.5);
+  z-index: 2;
+  animation: badgeFadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+/* === Content Section === */
+.event-discount-content {
+  flex: 1.7;
+  padding: 2rem 2.5rem;
+  background: #fdfdfd;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Title */
+.event-discount-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 0.6rem;
+  transition: transform 0.3s ease, color 0.3s;
+}
+.event-discount-title:hover {
+  transform: scale(1.02);
+  color: #000;
+}
+
+/* Description */
+.event-discount-description {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Percentage */
+.event-discount-percentage {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* End Date */
+.event-discount-end {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 1.6rem;
+}
+
+/* Button */
+.discount-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.85rem 2.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(101, 116, 205, 0.4);
+  animation: pulse 2.5s infinite;
+}
+.discount-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 28px rgba(101, 116, 205, 0.55);
+}
+
+/* === Element-by-element Fade Animation === */
+.event-discount-content > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.6s ease-out forwards;
+}
+.event-discount-content > *:nth-child(1) { animation-delay: 0.3s; }
+.event-discount-content > *:nth-child(2) { animation-delay: 0.5s; }
+.event-discount-content > *:nth-child(3) { animation-delay: 0.7s; }
+.event-discount-content > *:nth-child(4) { animation-delay: 0.9s; }
+.event-discount-content > *:nth-child(5) { animation-delay: 1.1s; }
+
+/* === Animations === */
+@keyframes popupFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popupSlideIn {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeSlideIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes badgeFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(101, 116, 205, 0.5); }
+  70% { box-shadow: 0 0 0 15px rgba(101, 116, 205, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(101, 116, 205, 0); }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .event-discount-container {
+    flex-direction: column;
+    border-radius: 16px;
+  }
+
+  .event-discount-banner,
+  .event-discount-content {
+    width: 100%;
+    flex: 1;
+  }
+
+  .event-discount-content {
+    padding: 1.5rem;
+  }
+
+  .event-discount-title {
+    font-size: 1.6rem;
+  }
+
+  .event-discount-percentage {
+    font-size: 2.3rem;
+  }
+
+  .discount-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .event-discount-badge {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 16px;
+  }
+}

@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+
+
+#newscat .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+#newscat .card-wrapper {
+  padding: 0 10px;
+}
+
+
+/* ─────────────────────────────
+   Generic utilities reused below
+   ───────────────────────────── */
+#newscat .center-image {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  object-fit: cover;
+}
+
+#newscat .blend-image {
+  filter: brightness(250%) grayscale(100%);
+  mix-blend-mode: screen;
+}
+
+/* ─────────────────────────────
+   Card‑slider
+   ───────────────────────────── */
+#newscat .icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+#newscat .slick-slide {
+  padding: 2em 0.5em;
+}
+
+#newscat .card-slider {
+  margin: auto;
+  width: 100%;
+}
+
+#newscat .card {
+  background: #fff;
+  display: flex;
+  padding: 2em;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  height: 350px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
+  transition: opacity 350ms;
+}
+
+#newscat .card--opened>* {
+  opacity: 0;
+}
+
+
+
+
+
+/* Make sure cards are same height */
+#newscat .card-slider .slick-track {
+  display: flex;
+}
+
+#newscat .card-slider .slick-slide {
+  height: auto;
+}
+
+/* Add heading styles for "RECENT NEWS" */
+#newscat .section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2e5f80;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+
+
+
+/* Card background (with inheritance of utilities) */
+#newscat .card__background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background: #2fd4dc;
+  z-index: -1;
+  text-align: left;
+}
+
+#newscat .card__background img {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  object-fit: cover;
+  width: 100%;
+  min-height: 100%;
+  filter: brightness(0.9);
+  /* Slightly darker */
+}
+
+#newscat .card__background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, #fff 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+/* Card content */
+#newscat .card__category {
+  text-transform: uppercase;
+  color: #fff;
+  background: #2fd4dc;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 0.2em 0.5em 0.25em;
+}
+
+#newscat .card__title {
+  text-transform: uppercase;
+  margin: 0.5em 0;
+  color: #2e5f80;
+}
+
+#newscat .card__duration {
+  color: #6f7070;
+}
+
+/* ─────────────────────────────
+   Modal
+   ───────────────────────────── */
+#newscat .modal-wrapper,
+#newscat .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#newscat .modal-wrapper {
+  display: flex;
+}
+
+#newscat .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 150ms ease;
+}
+
+#newscat .modal {
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  margin-top: 9.5%;
+  width: 90vw;
+  height: 78vh;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 20px;
+}
+
+#newscat .modal__scroll-area {
+  height: inherit;
+  overflow: auto;
+  border-radius: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+#newscat .modal__close-button {
+  background: transparent;
+  border: none;
+  margin-bottom: auto;
+  color: #2e5f80;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2em;
+  z-index: 2;
+}
+
+#newscat .modal__header {
+  text-align: center;
+  position: relative;
+  display: flex;
+  padding: 0.5em;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 300px;
+  z-index: 1;
+}
+
+#newscat .modal__content {
+  padding: 2em;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ─────────────────────────────
+   Modal state machine
+   ───────────────────────────── */
+[data-modal-state="closed"] .modal-wrapper,
+[data-modal-state="closed"] .overlay {
+  pointer-events: none;
+}
+
+[data-modal-state="closed"] .modal,
+[data-modal-state="closed"] .overlay {
+  opacity: 0;
+}
+
+[data-modal-state="opening"] #newscat .overlay {
+  transition: opacity 500ms ease;
+}
+
+[data-modal-state="opening"] #newscat .modal__header,
+[data-modal-state="opening"] #newscat .modal__content,
+[data-modal-state="opening"] #newscat .modal__close-button,
+[data-modal-state="closing"] #newscat .modal__header,
+[data-modal-state="closing"] #newscat .modal__content,
+[data-modal-state="closing"] #newscat .modal__close-button {
+  opacity: 0;
+}
+
+[data-modal-state="closing"] #newscat .overlay {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+[data-modal-state="open"] .modal__header,
+[data-modal-state="open"] .modal__content {
+  transition: opacity 450ms;
+}
+
+
+
+/* Modal base styles */
+#newscat .modal {
+  will-change: transform, opacity;
+  transform-origin: center;
+  transition: opacity 0.3s ease;
+}
+
+/* Overlay transition */
+#newscat .overlay {
+  transition: opacity 0.3s ease;
+}
+
+/* Card transition */
+#newscat .card {
+  transition: opacity 0.3s ease;
+}
+
+/* State management */
+[data-modal-state="closed"] #newscat .modal,
+[data-modal-state="closed"] #newscat .overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-modal-state="open"] #newscat .modal,
+[data-modal-state="open"] #newscat .overlay {
+  opacity: 1;
+  pointer-events: all;
+}

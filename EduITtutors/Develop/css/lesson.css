@@ -1,0 +1,193 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.course-container {
+    padding: 30px 15px;
+    max-width: 1200px;
+}
+
+.course-header {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.course-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.instructor-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.instructor-name {
+    margin-left: 10px;
+}
+
+.instructor-name strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.instructor-name span {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.course-tabs {
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 25px;
+}
+
+.course-tabs .nav-link {
+    color: #7f8c8d;
+    font-weight: 500;
+    border: none;
+    padding: 12px 20px;
+    position: relative;
+}
+
+.course-tabs .nav-link.active {
+    color: #3498db;
+    background-color: transparent;
+    border-bottom: 3px solid #3498db;
+}
+
+.course-tabs .nav-link:hover:not(.active) {
+    color: #3498db;
+}
+
+.course-description {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.progress-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.progress-container {
+    margin-bottom: 30px;
+}
+
+.progress {
+    height: 25px;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+}
+
+.progress-bar {
+    background-color: #3498db;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lessons-list {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+
+.lesson-category {
+    margin-bottom: 25px;
+}
+
+.lesson-category:last-child {
+    margin-bottom: 0;
+}
+
+.lesson-category h4 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.lesson-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.lesson-item:last-child {
+    border-bottom: none;
+}
+
+.lesson-item i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.lesson-item.completed i {
+    color: #2ecc71;
+}
+
+.lesson-item.in-progress i {
+    color: #f39c12;
+}
+
+.lesson-item span {
+    flex-grow: 1;
+}
+
+.lesson-progress {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+}
+
+.tab-content-placeholder {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.instructor-details {
+    display: flex;
+    gap: 20px;
+}
+
+.instructor-bio h5 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.instructor-bio .title {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .course-tabs .nav-link {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .course-header h1 {
+        font-size: 1.8rem;
+    }
+}

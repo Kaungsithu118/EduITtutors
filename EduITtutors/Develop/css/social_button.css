@@ -1,0 +1,86 @@
+/* Social Login Button Section */
+
+.social-button {
+    margin: 30px 0px !important;
+}
+
+.social-button .auth-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    font-family: 'Segoe UI', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    transform: scale(1) !important;
+    will-change: transform, box-shadow !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.social-button .auth-btn:hover {
+    transform: scale(1.03) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.social-button .google-btn {
+    background-color: #fff !important;
+    color: #3c4043 !important;
+    border: 1px solid #dadce0 !important;
+}
+
+.social-button .google-btn:hover {
+    background-color: #f8f9fa !important;
+}
+
+.social-button .facebook-btn {
+    background-color: #166fe5 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.social-button .facebook-btn:hover {
+    background-color: #166fe5 !important;
+}
+
+.social-button .auth-btn img {
+    width: 20px !important;
+    height: 20px !important;
+    transition: transform 0.3s ease !important;
+}
+
+.social-button .auth-btn:hover img {
+    transform: scale(1.1) !important;
+}
+
+.social-button .or-divider {
+    text-align: center !important;
+    margin: 20px 0 !important;
+    position: relative !important;
+}
+
+.social-button .or-divider span {
+    background: #fff !important;
+    padding: 0 14px !important;
+    color: #999 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    z-index: 1 !important;
+    position: relative !important;
+}
+
+.social-button .or-divider::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 1px;
+    background: #ddd;
+    z-index: 0 !important;
+}
